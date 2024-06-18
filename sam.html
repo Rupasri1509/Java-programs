@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Selector</title>
+    <style>
+        /* Define some example styles for different layouts */
+        .layout1 {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .layout2 {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border: 2px solid #66a3ff;
+            border-radius: 10px;
+        }
+
+        .layout3 {
+            background-color: #ffe6e6;
+            padding: 10px;
+            border: 1px solid #ff6666;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Layout Selector</h1>
+
+<label for="layoutSelect">Select Your Favorite Layout:</label>
+<select id="layoutSelect" onchange="applyLayout()">
+    <option value="layout1">Layout 1</option>
+    <option value="layout2">Layout 2</option>
+    <option value="layout3">Layout 3</option>
+</select>
+
+<div id="selectedLayout" class="layout1">
+    <p>This is the content area.</p>
+</div>
+
+<script>
+    function applyLayout() {
+        // Get the selected layout from the dropdown
+        var selectedLayout = document.getElementById("layoutSelect").value;
+
+        // Apply the selected layout to the content area
+        var contentArea = document.getElementById("selectedLayout");
+        contentArea.className = selectedLayout;
+    }
+</script>
+
+</body>
+</html>
